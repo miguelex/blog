@@ -7,7 +7,7 @@ class Post extends CI_Model {
         return $this->db->get('post');
     }
 
-    public function getPostByName($id=''){
+    public function getPostById($id=''){
         $result = $this->db->query("SELECT * FROM post WHERE id ='".$id."' LIMIT 1");
         return $result->row();
     }
