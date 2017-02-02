@@ -16,14 +16,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a href="<?= base_url() ?>">Inicio</a>
                 </li>
                 <li>
-                    <a href="about.html">Acerca de</a>
+                    <a href="<?= base_url() ?>about">Acerca de</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contacto</a>
+                    <a href="<?= base_url() ?>contact">Contacto</a>
                 </li>
+                <?php if ($this->session->userdata('login')){ ?>
+                  <li>
+                      <a href="<?= base_url() ?>login/logout">Cerrar sesión</a>
+                  </li>
+                  <li>
+                      <a href="<?= base_url() ?>profile/">Perfil</a>
+                  </li>
+                <?php } else { ?>
                 <li class='dropdown'>
                       <a class='dropdown-toggle' href='#' data-toggle='dropdown' style="background: none;">INICIAR SESION ... <strong class='caret'></strong></a>
                       <div class='dropdown-menu' style='padding: 10px; padding-bottom: 0px; background: none; width: 400px;'>
@@ -40,6 +48,7 @@
                           </form>
                       </div>
                 </li>
+                <?php } ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

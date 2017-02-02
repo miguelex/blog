@@ -11,8 +11,8 @@
 
     <title><?= $titulo ?></title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<?= base_url()?>plantilla/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS 
+    <link href="<?= base_url()?>plantilla/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Theme CSS -->
     <link href="<?= base_url()?>plantilla/css/clean-blog.min.css" rel="stylesheet">

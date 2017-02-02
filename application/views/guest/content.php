@@ -6,7 +6,12 @@
                 foreach ($consulta->result() as $fila){
             ?>
                     <div class="post-preview">
-                        <a href="<?= base_url()?>article/post/<?= $fila->id ?>">
+                      <?php
+                          $date = DateTime::createFromFormat("Y-m-d", $fila->fecha);
+                          $year = $date->format("Y");
+                          $name = str_replace(" ", "_", $fila->post)
+                       ?>
+                        <a href="<?= base_url()?>article/post/<?= $year ?>/<?= $name ?>">
                             <h2 class="post-title">
                                 <?= $fila->post ?>
                             </h2>
@@ -20,13 +25,9 @@
                 }
             ?>
 
-            <hr>
+
             <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
+            <?php echo $pagination ?>
         </div>
     </div>
 </div>
